@@ -1,0 +1,54 @@
+/filewatcher 'index.slim' 'echo Compiling... && slimrb index.slim > index.html'
+ruby:
+  @parameters = {
+    "Marka" => "Mazda",
+    "Model" => "MX-5",
+    "Rok" => 2007,
+    "VIN" => "JMZNC188280133934",
+    "Data pierwszej rejestracji" => "27.04.2007",
+    "Silnik" => "4 cylindrowy benzynowy 1798cm3",
+    "Moc" => "93kW/126KM",
+    "Max moment obrotowy" => "167 Nm",
+    "Zużycie paliwa" => "7,3 l/100 km",
+    "Przyspieszenie 0–100 km/h" => "9,4s",
+    "Skrzynia biegów" => "Manualna",
+    "Liczba biegów" => "5",
+    "Napęd" => "Tył",
+    "Prędkość max" => "196 km/h",
+    "Przegląd techiczny do" => "12.04.2017",
+    "Ubezpieczenie OC do" => "23.11.2016"
+  }
+doctype html
+html
+  head
+    title Kup Mazdę MX-5! Sprzedam Ci Mazdę MX-5!
+    link(rel="shortcut icon" href="favicon.png")
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width"
+    meta name="mobile-web-app-capable" content="yes"
+    meta name="apple-mobile-web-app-capable" content="yes"
+    link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"
+    link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css"
+    script src="bootstrap/js/bootstrap.min.js"
+  body
+    center
+      img.img-responsive src="images/garaz-panorama.jpg"
+      h1 Mazda 2007 MX-5
+      video style="width: 99wv; height: 99vh;" muted="muted" autoplay="autoplay" loop="loop"
+        source src="videos/walkaround.mp4" type="video/mp4"
+        ' Your browser does not support the video tag.
+    .container-fluid
+      .row: .col-md-12
+        table.table
+          thead
+            tr
+              th Parametr
+              th Wartość
+          tbody
+            - @parameters.each do |key, value|
+              tr
+                td = key
+                td = value
+
+
