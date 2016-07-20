@@ -5,6 +5,7 @@ ruby:
     "Marka" => "Mazda",
     "Model" => "MX-5",
     "Rok" => 2007,
+    "Przebieg" => "33'000",
     "VIN" => "JMZNC188280133934",
     "Data pierwszej rejestracji" => "27.04.2007",
     "Silnik" => "4 cylindrowy benzynowy 1798cm3",
@@ -34,15 +35,23 @@ html
     link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css"
     script src="jquery-2.2.4.min.js"
     script src="bootstrap/js/bootstrap.min.js"
+    css:
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      html, body{
+        width: 100%;
+      }
   body
     center
       a href="images/garaz-panorama.jpg"
-        img.img-responsive src="images/garaz-panorama.jpg"
+        img.img-responsive src="images/small_garaz-panorama.jpg"
       h1 Sprzedam Mazda 2007 MX-5
       h3 tel.kom. 510-355-151
 
       a href="videos/walkaround.webm"
-        video style="width: 99wv; height: 99vh;" muted="muted" autoplay="autoplay" loop="loop"
+        video style="max-width: 99wv; width: 99vw;" muted="muted" autoplay="autoplay" loop="loop"
           source src="videos/walkaround.webm" type="video/webm"
           ' Your browser does not support the video tag.
     .container-fluid
@@ -59,7 +68,7 @@ html
                 td = value
         /center
         /  a href="videos/promo.webm"
-        /    video style="width: 99wv; height: 99vh;" muted="muted" autoplay="autoplay" loop="loop"
+        /    video style="max-width: 99wv; width: 99vw;" muted="muted" autoplay="autoplay" loop="loop"
         /      source src="videos/promo.webm" type="video/webm"
         /      ' Your browser does not support the video tag.
         /.container-fluid
@@ -74,7 +83,7 @@ html
         - 45.times do |i|
           .col-md-4
             a href="images/#{i+1}.jpg"
-              img.img-responsive src="images/#{i+1}.jpg"
+              img.img-responsive src="images/small_#{i+1}.jpg"
     center
       h1 Sprzedam Mazda 2007 MX-5
       h3 tel.kom. 510-355-151
