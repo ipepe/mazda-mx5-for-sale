@@ -7,7 +7,9 @@ ruby:
     "Model" => "MX-5",
     "Rok" => 2007,
     "Przebieg" => "33'000",
+    "Lokalizacja" => "Warszawa, Bielany",
     "VIN" => "JMZNC188280133934",
+    "Kolor" => "Radiant Ebony",
     "Data pierwszej rejestracji" => "27.04.2007",
     "Silnik" => "4 cylindrowy benzynowy 1798cm3",
     "Moc" => "93kW/126KM",
@@ -21,12 +23,26 @@ ruby:
     "Przegląd techiczny do" => "12.04.2017",
     "Ubezpieczenie OC do" => "23.11.2016"
   }
+  @description = """
+  Sprzedam śliczną Mazdę MX-5 z 2007 roku. Od października poprzedniego roku jestem szczęśliwym posiadaczem Mazdy.
+  Do samochodu jest dużo dodatków: bagażnik na tylną klapę (fabryczne akcesorium),
+  materiałowe panele do zakrycia otworów przy otwartym dachu, chormowy grill na zderzak przedni (założony),
+  chromowy grill dolny na zderzak przedni (do założenia), gniazdo AUX. Samochód ma bardzo bogate wyposażenie: elektryczne
+  lusterka, elektrycznie podgrzewane fotele, wielofunkcyjna kierownica, halogeny przednie, radio fabryczne, klimatyzacja
+  automatyczna (klimatronic). Co do autentyczności przebiegu to podejrzewam że przekroczenie granicy Polska-Niemcy magicznie
+  zadziałało na instrumenty w pojeździe i zmniejszyło przebieg. Samochód w środku wygląda dobrze i ładnie. Od spodu większość
+  mechaników mówi że jest ładnie i świeżo. Do Mazdy dokupiłem opony na zimę i w sumie dobrze bo zima była łagodna więc nawet
+  w grudniu z otwartym dachem pojeździłem. Opony zimowe mają niewielki przebieg i chciałbym je sprzedać razem z autem. (są w przechowalni na Targówku)
+  Auto sprzedaje z powodu potrzebnych finansów na kupno mieszkania z kredytem."""
 doctype html
 html
   head
-    title Kup Mazdę MX-5! Sprzedam Ci Mazdę MX-5!
+    title Kup śliczną Mazdę MX-5!
     link(rel="shortcut icon" href="favicon.png")
     meta charset="utf-8"
+    meta name="description" content=@description
+    meta name="keywords" content="Mazda,MX-5,kup,sprzedam,2007,warszawa,"
+    meta name="author" content="patryk.webdev@ipepe.pl"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width"
     meta name="mobile-web-app-capable" content="yes"
@@ -43,6 +59,9 @@ html
       }
       html, body{
         width: 100%;
+      }
+      .row{
+        padding-top: 20px
       }
   body
     center
@@ -68,12 +87,6 @@ html
               tr
                 td = key
                 td = value
-        /center
-        /  a href="videos/promo.webm"
-        /    video style="max-width: 99wv; width: 99vw;" muted="muted" autoplay="autoplay" loop="loop"
-        /      source src="videos/promo.webm" type="video/webm"
-        /      ' Your browser does not support the video tag.
-        /.container-fluid
       .row
         .col-md-6
           a href="images/historia-pojazdu-1.png"
@@ -81,6 +94,10 @@ html
         .col-md-6
           a href="images/historia-pojazdu-2.png"
             img.img-responsive src="images/historia-pojazdu-2.png"
+      .row
+        .col-md-12
+          h2 Opis
+          h3 = @description
       .row
         - 45.times do |i|
           .col-md-4
