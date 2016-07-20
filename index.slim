@@ -1,6 +1,7 @@
 /filewatcher 'index.slim' 'echo Compiling... && slimrb index.slim > index.html'
 /todo: support pogdladu zdjec facebook oraz twitter
 ruby:
+  @telephone_number = "510-355-151"
   @parameters = {
     "Marka" => "Mazda",
     "Model" => "MX-5",
@@ -48,11 +49,12 @@ html
       a href="images/garaz-panorama.jpg"
         img.img-responsive src="images/small_garaz-panorama.jpg"
       h1 Sprzedam Mazda 2007 MX-5
-      h3 tel.kom. 510-355-151
+      h3 tel.kom. #{@telephone_number}
 
       a href="videos/walkaround.webm"
         video style="max-width: 99wv; width: 99vw;" muted="muted" autoplay="autoplay" loop="loop"
           source src="videos/walkaround.webm" type="video/webm"
+          source src="videos/walkaround.ogg" type="video/ogg"
           ' Your browser does not support the video tag.
     .container-fluid
       .row: .col-md-12
@@ -86,4 +88,4 @@ html
               img.img-responsive src="images/small_#{i+1}.jpg"
     center
       h1 Sprzedam Mazda 2007 MX-5
-      h3 tel.kom. 510-355-151
+      h3 tel.kom. #{@telephone_number}
