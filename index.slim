@@ -50,6 +50,7 @@ html
     link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"
     link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css"
     script src="jquery-2.2.4.min.js"
+    script src="jquery.lazyload.min.js"
     script src="bootstrap/js/bootstrap.min.js"
     css:
       body {
@@ -133,7 +134,9 @@ html
         - 45.times do |i|
           .col-md-4
             a href="images/#{i+1}.jpg"
-              img.img-responsive src="images/small_#{i+1}.jpg"
+              img.img-responsive.lazy src="images/loading.jpg" data-original="images/small_#{i+1}.jpg"
     center
       h1 Sprzedam Mazda 2007 MX-5
       h3 tel.kom. #{@telephone_number}
+    javascript:
+      $("img.lazy").lazyload();
