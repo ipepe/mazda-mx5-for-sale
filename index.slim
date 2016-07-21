@@ -68,7 +68,9 @@ html
       a href="images/garaz-panorama.jpg"
         img.img-responsive src="images/small_garaz-panorama.jpg"
       h1 Sprzedam Mazda 2007 MX-5
-      h3 tel.kom. #{@telephone_number}
+      h3
+        | tel.kom.
+        a href="tel:#{@telephone_number.gsub('-','')}" = @telephone_number
 
       a href="videos/walkaround.webm"
         video style="max-width: 99wv; width: 99vw;" muted="muted" autoplay="autoplay" loop="loop"
@@ -137,6 +139,15 @@ html
               img.img-responsive.lazy src="images/loading.jpg" data-original="images/small_#{i+1}.jpg"
     center
       h1 Sprzedam Mazda 2007 MX-5
-      h3 tel.kom. #{@telephone_number}
+      h3
+        | tel.kom.
+        a href="tel:#{@telephone_number.gsub('-','')}" = @telephone_number
     javascript:
       $("img.lazy").lazyload();
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-81150032-1', 'auto');
+      ga('send', 'pageview');
